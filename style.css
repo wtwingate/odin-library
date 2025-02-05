@@ -74,4 +74,41 @@ h6 {
 html {
   font-size: 18px;
   font-family: Roboto, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+body {
+  padding: 32px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+table {
+  margin: 32px auto;
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+thead {
+  color: white;
+  background-color: black;
+}
+
+tbody {
+  tr:nth-child(even) {
+    background-color: lightgray;
+  }
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
 }
