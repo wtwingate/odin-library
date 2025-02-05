@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+/* Book Data and Methods */
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -22,6 +24,8 @@ Book.prototype.info = function () {
 Book.prototype.toggleRead = function () {
   this.read = !this.read;
 };
+
+/* Library Management and Display */
 
 function addBookToLibrary(title, author, pages, read) {
   const book = new Book(title, author, pages, read);
@@ -66,7 +70,25 @@ function updateBookshelf() {
   }
 }
 
-// test data
+const newBookButton = document.querySelector("#add-book-button");
+const newBookDialog = document.querySelector("#add-book-dialog");
+newBookButton.addEventListener("click", () => {
+  newBookDialog.showModal();
+});
+
+const newBookForm = newBookDialog.querySelector("form");
+newBookForm.addEventListener("submit", () => {
+  const formData = new FormData(newBookForm);
+  const title = formData.get("title");
+  const author = formData.get("author");
+  const pages = formData.get("pages");
+  const read = formData.get("read");
+  addBookToLibrary(title, author, pages, read);
+  updateBookshelf();
+  newBookDialog.close();
+});
+
+/* Test Data */
 
 addBookToLibrary("The Hobbit", "J. R. R. Tolkien", 420, true);
 addBookToLibrary("The Lord of the Rings", "J. R. R. Tolkien", 1440, true);

@@ -86,6 +86,29 @@ h1 {
   font-size: 6rem;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 64px;
+}
+
+button {
+  display: block;
+  padding: 8px 32px;
+  margin: 0px auto;
+}
+
+dialog {
+  margin: auto;
+}
+
+form {
+  padding: 16px 64px;
+}
+
+.form-element {
+  margin-bottom: 32px;
+}
+
+label {
+  display: block;
 }
 
 table {
@@ -109,6 +132,6 @@ tbody {
 
 th,
 td {
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
 }
