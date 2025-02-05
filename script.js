@@ -36,8 +36,9 @@ function updateBookshelf() {
   const bookshelf = document.querySelector("tbody");
   bookshelf.replaceChildren(); // clear existing data
 
-  for (const book of myLibrary) {
+  for (const [index, book] of myLibrary.entries()) {
     const row = document.createElement("tr");
+    row.dataset.index = index;
 
     // title
     const title = document.createElement("th");
@@ -65,7 +66,17 @@ function updateBookshelf() {
     read.appendChild(checkbox);
     row.appendChild(read);
 
-    // add book to shelf
+    // remove
+    const remove = document.createElement("td");
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "X";
+    removeButton.addEventListener("click", () => {
+      myLibrary.splice(index, 1);
+      updateBookshelf();
+    });
+    remove.appendChild(removeButton);
+    row.appendChild(remove);
+
     bookshelf.appendChild(row);
   }
 }

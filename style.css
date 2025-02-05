@@ -135,3 +135,11 @@ td {
   padding: 16px;
   text-align: center;
 }
+
+td > button {
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: white;
+  background-color: black;
+  padding: 0px 7px;
+}
